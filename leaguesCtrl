@@ -1,0 +1,20 @@
+(function () {
+    'use strict';
+    angular.module('IonicApp').controller('leaguesCtrl', ['$state','eliteApi', leaguesCtrl]);
+
+
+    function leaguesCtrl($state, eliteApi) {
+        var vm = this;
+
+        eliteApi.getleagues().then(function (data) {
+            vm.leagues = data;
+        });
+
+        vm.selectLeague = function(id) {
+            eliteApi.setleagueId(id);
+            $state.go("app.teams");
+        }
+
+
+    };
+})();
