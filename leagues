@@ -6,5 +6,5 @@
                 <i class="icon ion-chevron-right icon-accessory"></i>
             </a>
         </div>
-    </ion-content>
+    </ion-content> 
 </ion-view>
