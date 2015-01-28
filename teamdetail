@@ -1,0 +1,24 @@
+<ion-view ng-controller="teamDetailCtrl as vm" >
+    <ion-content class="has-header">
+        <!----div class="item item-toggle">
+            <h2>{{vm.following ?"Following": "Not following"}}</h2>
+
+            <label class="toggle toggle-energized">
+                <input type="checkbox" ng-model="vm.following" />
+                <div class="track">
+                    <div class=" handle"></div>
+                </div>
+            </label>
+        </div-->
+
+        <div class="card">
+            <div class="item item-button-right">
+                <h2> following??</h2>
+    <button class="button button-positive" ng-click="vm.togglefollow()" ng-class="{'ion-checkmark-round':vm.following,'ion-plus-round button-outline': !vm.following}">
+        {{vm.following?"following":"Not following"}}
+    </button>
+</div>
+        </div>
+        
+    </ion-content>
+</ion-view>
