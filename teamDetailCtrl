@@ -1,0 +1,26 @@
+(function () {
+    'use strict';
+    angular.module('IonicApp').controller('teamDetailCtrl', ['$stateParams','$ionicPopup', teamDetailCtrl]);
+    function teamDetailCtrl($stateParams,$ionicPopup) {
+        var vm = this;
+        console.log("$stateParams", $ionicPopup, $stateParams);
+
+        vm.following = false;
+
+        vm.togglefollow = function () {
+            if (vm.following) {
+                var confirmPopup = $ionicPopup.confirm({
+                    title: 'Unfollow?',
+                    template: 'are you sure you wanrt to unfollow?'
+                });
+                confirmPopup.then(function (res) {
+                    if (res) { vm.following = !vm.following; }
+                });
+
+            }
+            else {
+                vm.following = !vm.following;
+            }
+        };
+    }
+})();
