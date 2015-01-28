@@ -1,0 +1,15 @@
+(function () {
+    'use strict';
+    angular.module('IonicApp').controller('teamsCtrl', ['eliteApi', teamsCtrl]);
+
+    function teamsCtrl(eliteApi) {
+        var vm = this;
+
+        eliteApi.getleaguedata().then(function (data) {
+
+            vm.teams = data.teams;
+        });
+      
+    };
+}
+)();
